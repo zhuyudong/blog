@@ -1,0 +1,22 @@
+{
+  "name": "css",
+  "version": "1.0.0",
+  "description": "",
+  "main": "css.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "grunt": "grunt styles",
+    "gulp": "gulp styles"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "grunt-postcss": "^0.9.0",
+    "gulp-postcss": "^7.0.0"
+  }
+}

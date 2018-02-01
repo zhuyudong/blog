@@ -1,0 +1,52 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!--https://github.com/mdn/js-examples/blob/master/promises-test/index.html-->
+  <!--https://mdn.github.io/js-examples/promises-test/-->
+  <!--[if it IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <h1>Promise example</h1>
+  <p>
+    Darth Vader Image by <a href="https://www.flickr.com/photos/digital_stability/">Shawn Taylor</a>,
+    publish under a <a href="https://creativecommons.org/licenses/by-nc-nd/2.0/">Attribution-NonCommercial-NoDerivs 2.0 Generic</a>
+    license.
+  </p>
+  <script>
+    function imgLoad(url) {
+      return new Promise(function(resolve, reject) {
+        var request = new XMLHttpRequest();
+        request.open('GET', url);
+        request.responseType = 'blob';
+        request.onload = function() {
+          if (request.status === 200) {
+            resolve(request.response);
+          } else {
+            reject(new Error('Image didn\'t load successfully; error code:' + request.statusText));
+          }
+        }
+        request.onerror = function() {
+          reject(Error(request.statusText));
+        }
+        request.send();
+      });
+    }
+    var body = document.querySelector('body');
+    var myImage = new Image();
+    imgLoad('img.jpg').then(function(response) {
+      var imageUrl = window.URL.createObjectURL(response);
+      myImage.src = imageUrl;
+      body.appendChild(myImage);
+    }, function(error) {
+      console.error(error);
+    });
+  </script>
+</body>
+</html>

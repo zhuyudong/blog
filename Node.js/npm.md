@@ -1,0 +1,1 @@
+npm钩子顺序：preinstall——>install——>postinstall——>prepublish——>prepare

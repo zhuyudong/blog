@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <style type="text/css">
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+      body {
+        width: 80%;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 2em;
+      }
+      .rwd-header {
+        background: rgba(219, 111, 83, 1);
+        width: 100%;
+        height: 80px;
+        line-height: 80px;
+        margin: 5px 0;
+      }
+      .rwd-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      .rwd-content-left, .rwd-content-body, .rwd-content-right {
+        float: left;
+      }
+      .rwd-content-left {
+        background: rgba(103, 194, 148, 1);
+        width: 20%;
+        height: 200px;
+        line-height: 200px;
+      }
+      .rwd-content-body {
+        width: 60%;
+        padding: 0 5px;
+      }
+      .rwd-content-body-top {
+        background: rgba(89, 167, 209, 1);
+        height: 145px;
+        line-height: 145px;
+        margin-bottom: 5px;
+      }
+      .rwd-content-body-bottom {
+        background: rgba(89, 167, 209, 1);
+        height: 250px;
+        line-height: 250px;
+      }
+      .rwd-content-right {
+        background: rgba(242, 164, 68, 1);
+        width: 20%;
+        height: 300px;
+        line-height: 300px;
+      }
+      .rwd-footer {
+        background: rgba(129, 140, 148, 1);
+        width: 100%;
+        height: 100px;
+        line-height: 100px;
+        margin: 5px 0;
+      }
+      @media only screen and (max-width: 1024px) {
+        .rwd-content-left {
+          flex-wrap: wrap;
+        }
+        .rwd-content-body {
+          width: 70%;
+        }
+        .rwd-content-right {
+          width: 100%;
+          margin-top: 5px;
+          height: 100px;
+          line-height: 100px;
+        }
+      }
+      @media only screen and (max-width: 768px) {
+        [class*="rwd-content-"] {
+          width: 100%;
+        }
+        .rwd-content-body {
+          padding: 0;
+        }
+        .rwd-content-body-top {
+          margin-top: 5px;
+        }
+        .rwd-content-body-bottom {
+          margin-bottom: 5px;
+        }
+        .rwd-content-right {
+          margin-top: 0;
+        }
+      }
+    </style>
+    <div class="rwd-header">Header</div>
+    <div class="rwd-content">
+      <div class="rwd-content-left">Left</div>
+      <div class="rwd-content-body">
+        <div class="rwd-content-body-top">Top Content</div>
+        <div class="rwd-content-body-bottom">Bottom Content</div>
+      </div>
+      <div class="rwd-content-right">Right</div>
+    </div>
+    <div class="rwd-footer">Footer</div>
+    <br />
+
+    <style>
+      .parent {
+        display: flex;
+        width: 100%;
+      }
+      .child {
+        flex: 1 1 25%;
+        /* 决定子元素如何膨胀 */
+        /* flex-grow: 1; */
+        padding: 10px;
+        margin: 8px 4px;
+      }
+      .child:first-child {
+        margin-left: 8px;
+      }
+      .child:last-child {
+        margin-right: 8px;
+      }
+      .child:nth-of-type(odd) {
+        background: #E87F23;
+      }
+      .child:nth-of-type(even) {
+        background: #88479A;
+      }
+      /* .child:nth-child(3) {
+        flex-grow: 2;
+        width: 15em;
+        flex-basis: auto;
+      } */
+    </style>
+    <div class="parent">
+      <div class="child">First Child 111111111111111111</div>
+      <div class="child">Second Child</div>
+      <div class="child">Third Child</div>
+      <div class="child">Four Child</div>
+    </div>
+</body>
+</html>

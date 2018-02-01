@@ -1,0 +1,25 @@
+{
+  "name": "babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel-loose": "babel --presets es2015-loose src -d loose",
+    "babel-preset-env": "babel --presets env src -d preset-env",
+    "babel-preset-es2015": "babel --presets es2015 src -d preset-es2015"
+  },
+  "babel": {
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2015-loose": "^8.0.0",
+    "babel-runtime": "^6.26.0"
+  }
+}

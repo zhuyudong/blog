@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>iphone 表格</title>
+</head>
+<body>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .info {
+      border: 1px solid #000;
+      border-width: 1px 1px;
+    }
+    .info tr > td {
+      border: 1px solid #000;
+      border-width: 1px 1px;
+    }
+
+    .comparison tr > td {
+      border: 1px solid #666;
+      border-width: 1px 0;
+    }
+    .comparison tr > td:nth-child(even) {
+      background-color: #AAA;
+    }
+  </style>
+  <h2>
+    信息表格
+  </h2>
+  <table class="info">
+    <tr>
+      <th></th>
+      <th>iPhone 7</th>
+    </tr>
+    <tr>
+      <td>外观</td>
+      <td>玫瑰金色</td>
+    </tr>
+    <tr>
+      <td>容量</td>
+      <td>256G</td>
+    </tr>
+    <tr>
+      <td>重量</td>
+      <td>138 克（4.87 盎司）</td>
+    </tr>
+    <tr>
+      <td>显示屏</td>
+      <td>4.7 英寸</td>
+    </tr>
+  </table>
+
+  <h2>
+    比较表格
+  </h2>
+  <table class='comparison'>
+    <tr>
+      <th> iPhone 7 Plush</th> 
+      <th>iPhone 7</th>
+      <th>iPhone 6 Plus</th>
+      <th>iPhone 6</th>
+    </tr>
+    <tr>
+      <td> 6种颜色</td> 
+      <td> 6种颜色</td>
+      <td>4种颜色</td>
+      <td>4种颜色</td>
+    </tr>
+    <tr>
+      <td>最高： 256GB</td> 
+      <td>最高： 256GB</td>
+      <td>最高： 128GB</td>
+      <td>最高： 128GB</td>
+    </tr>
+    <tr>
+      <td>188 克</td> 
+      <td>138 克 </td>
+      <td>192 克 </td>
+      <td>143 克</td>
+    </tr>
+    <tr>
+      <td>抗水、防尘</td> 
+      <td> 抗水、防尘</td>
+      <td> - </td>
+      <td> - </td>
+    </tr>
+  </table>
+</body>
+</html>

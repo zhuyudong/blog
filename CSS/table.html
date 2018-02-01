@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    table {
+      border: 1px solid #CCC;
+      border-collapse: collapse;
+      margin: 0;
+      padding: 0;
+      table-layout: fixed;
+      width: 100%;
+    }
+    table tr {
+      background: #F8F8F8;
+      border: 1px solid #DDD;
+      padding: .35em;
+    }
+    table th, table td {
+      padding: .625em;
+      text-align: center;
+    }
+    @media screen and (max-width: 600px) {
+      table thead {
+        border: none;
+        clip: react(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+      }
+      table tr {
+        border-bottom: 3px solid #DDD;
+        display: block;
+      }
+      table td {
+        border-bottom: 1px solid #DDD;
+        display: block;
+        text-align: right;
+      }
+      table td::before {
+        content: attr(data-label);
+        float: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <caption>Statement Summary</caption>
+    <thead>
+      <tr>
+        <th scope="col">Account</th>
+        <th scope="col">Due Date</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Period</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="Account">Visa - 3412</td>
+        <td data-label="Due Date">04/01/2016</td>
+        <td data-label="Amount">$1,190</td>
+        <td data-label="Period">03/01/2016 - 03/31/2016</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
