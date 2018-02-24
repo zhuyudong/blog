@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>事件处理</title>
+</head>
+<body>
+  <a>
+    <p>段落</p>
+    <span>span</span>
+  </a>
+  <script>
+    // document.addEventListener('click', function(e) {
+    //   // console.log(e.target.nodeName);
+    //   // console.log(e.currentTarget.nodeName);
+    //   var node = e.target;
+    //   while(node.parentNode.nodeName !== 'BODY') {
+    //     if (node.nodeName === 'A') {
+    //       console.log('a');
+    //       break;
+    //     }
+    //   }
+    // }, false);
+    window.addEventListener('DOMContentLoaded', function() {
+      // 解析HTML、加载外部css和js、解析并执行js、DOM树构建完成
+      console.log('DOMContentLoaded');
+    }, false);
+    window.addEventListener('load', function() {
+      // 加载外部图片等、页面加载完毕
+      console.log('load');
+    }, false);
+    const url = 'http://www.wljcz.com/My first/';
+    const encode = encodeURI(url);
+    console.log(encode);
+    console.log(decodeURI(encode));
+    const encodeComponent = encodeURIComponent(url);
+    console.log(encodeComponent);
+    console.log(decodeURIComponent(encodeComponent));
+  </script>
+
+<script language="JavaScript" type="text/javascript">   
+  　　//.innerHTML  
+  　　function innerHTMLDemo()  
+  　　{   
+  　　　test_id1.innerHTML="<i><u>设置或获取位于对象起始和结束标签内的 HTML.</u></i>";   
+  　　}   
+  　　//.innerText  
+  　　function innerTextDemo()  
+  　　{   
+  　　　test_id2.innerText="<i><u>设置或获取位于对象起始和结束标签内的文本.</u></i>";   
+  　　}   
+  　　//.outerHTML  
+  　　function outerHTMLDemo()  
+  　　{   
+  　　　test_id3.outerHTML="<font size=9pt color=red><i><u>设置或获取对象及其内容的 HTML 形式.</u></i></font>";   
+  　　}  
+  　　//.outerText  
+  　　function outerTextDemo()  
+  　　{   
+  　　　test_id4.outerText="<br></br><i><u>设置(包括标签)或获取(不包括标签)对象的文本.</u></i>";   
+  　　}  
+  　　</script>   
+  　　</head>   
+  　　<body>   
+  　　<ul>   
+  　　<li id="test_id1" onclick="innerHTMLDemo()">innerHTML效果.</li>   
+  　　<li id="test_id2" onclick="innerTextDemo()">innerText效果.</li>   
+  　　<li id="test_id3" onclick="outerHTMLDemo()">outerHTML效果.</li>   
+  　　<li id="test_id4" onclick="outerTextDemo()">outerText效果.</li>   
+  　　</ul>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!--表示ES6模块，异步加载-->
+  <script type="module">
+    /**
+     * 只在模块作用域内执行
+     * 默认严格模式 use strict
+     * 后缀不可省略
+     * 可以使用export
+     * 顶层this是undefined
+     * 同一个模块多次加载但只执行一次
+     * 可以使用相对或绝对url
+     * CommonJS模块输出的是一个值的拷贝，ES6模块输出的是值的引用
+     * CommonJS模块是运行时加载，ES6模块是编译时输出接口（动态引用）
+     */
+    import utils from './util.js';
+    const x = 1;
+    console.log(x === window.x); // false
+    console.log(this === undefined); // true
+    // 判断当前代码是否在ES6模块中
+    const isNotModuleScript = this !== undefined;
+  </script>
+  <script type="module" src=""></script>
+  <!--等效于如下-->
+  <script type="module" src="" defer></script>
+  <!--只要加载完成即中断渲染立即执行-->
+  <script type="module" src="" async></script>
+</body>
+</html>

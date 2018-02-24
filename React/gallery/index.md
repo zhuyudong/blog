@@ -1,0 +1,1 @@
+npm ls -g --depth=1 2>/dev/null | grep generator-

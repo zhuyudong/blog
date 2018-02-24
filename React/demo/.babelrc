@@ -1,0 +1,29 @@
+{
+
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": [
+          "> 5%",
+          "last 2 versions",
+          "not ie < 9"
+        ]
+      }
+    }],
+    "react"
+  ],
+  "plugins": [
+    "transform-runtime",
+    "transform-class-properties"
+  ],
+  "env": {
+    "development": {
+      "presets": [
+        "react-hmre"
+      ],
+      "plugins": [
+        "react-hot-loader/babel"
+      ]
+    }
+  }
+}
