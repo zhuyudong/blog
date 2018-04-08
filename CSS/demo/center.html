@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!--
+    水平居中
+    垂直居中
+  -->
+</head>
+<body>
+  <!--子元素水平垂直居中-->
+  <style>
+    /* 2012版本 */
+    .flex-parent {
+      height: 100px;
+      background-color: #00FF00;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .flex-child {
+      background-color: #FF0000;
+      width: 200px;
+    }
+  </style>
+  <div class="flex-parent">
+    <div class="flex-child">flex</div>
+  </div>
+  <hr/>
+  <!-- 绝对定位 -->
+  <style>
+    .position-parent1 {
+      position: relative;
+      height: 100px;
+      background-color: #00FF00;
+    }
+    .position-child1 {
+      background-color: #FF0000;
+      width: 500px;
+      height: 50px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  <div class="position-parent1">
+    <div class="position-child1">relative-absolute(transform)</div>
+  </div>
+  <hr/>
+  <!-- 绝对定位 -->
+  <style>
+    .position-parent2 {
+      position: relative;
+      height: 100px;
+      background-color: #00FF00;
+    }
+    .position-child2 {
+      background-color: #FF0000;
+      width: 500px;
+      height: 50px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto auto;
+    }
+  </style>
+  <div class="position-parent2">
+    <div class="position-child2">relative-absolute(margin:auto auto)</div>
+  </div>
+  <hr/>
+  <!-- 绝对定位 -->
+  <style>
+    .position-parent3 {
+      position: relative;
+      height: 100px;
+      background-color: #00FF00;
+    }
+    .position-child3 {
+      background-color: #FF0000;
+      width: 500px;
+      height: 50px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -250px;
+      margin-top: -25px;
+    }
+  </style>
+  <div class="position-parent3">
+    <div class="position-child3">relative-absolute(top:50%;left:50%;margin-left/top)</div>
+  </div>
+  <hr/>
+  <!-- table-cell 布局 -->
+  <style>
+    .table-parent {
+      display: table-cell;
+      height: 100px;
+      background-color: #00FF00;
+      text-align: center;
+      vertical-align: middle;
+    }
+    .table-child {
+      background-color: #FF0000;
+      width: 200px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  </style>
+  <div class="table-parent">
+      <div class="table-child">table-cell/inline-block</div>
+    </div>
+</body>
+</html>

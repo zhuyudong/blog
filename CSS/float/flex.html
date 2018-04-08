@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>flex布局</title>
+</head>
+<body>
+  <style>
+    .container {
+      display: flex;
+      width: 900px;
+      height: 200px;
+      flex-direction: flex-start;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .item {
+      /* flex: 1; */
+      /* height: 100px; */
+      width: 200px;
+    }
+    .container .item:nth-child(1) {
+      background: #F00000;
+      /* order: 2; */
+    }
+    .container .item:nth-child(2) {
+      background: #0000FF;
+    }
+    .container .item:nth-child(3) {
+      background: #00FF00;
+    }
+    .container .item:nth-child(4) {
+      background: green;
+    }
+    .container .item:nth-child(5) {
+      background: orange;
+    }
+    .container .item:nth-child(6) {
+      background: gray;
+    }
+    .container .item:nth-child(7) {
+      background: yellow;
+    }
+    .container .item:nth-child(8) {
+      background: #000000;
+    }
+    .container .item:nth-child(9) {
+      background: #F87567;
+    }
+  </style>
+  <!-- <div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+    <div class="item">7</div>
+    <div class="item">8</div>
+    <div class="item">9</div>
+  </div> -->
+
+  <!---->
+
+  <!---->
+
+  <!---->
+
+  <!---->
+
+  <!--Strick Sidebar 左侧sidebar固定且等视窗高度，超出就出现滚动条，左右滚动条独立-->
+  <style>
+    body {
+      height: 100%;
+      display: flex;
+    }
+    aside {
+      flex: none;
+      width: 200px;
+      overflow-y: auto;
+      display: block;
+    }
+    .content {
+      flex: auto;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+    .content article {
+      flex: auto;
+    }
+  </style>
+  <aside>
+    ASIDE
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+    <p>item</p>
+  </aside>
+  <div class="content">
+    <header>HEADER</header>
+    <article>CONTENT</article>
+    <footer>FOOTER</footer>
+  </div>
+</body>
+</html>

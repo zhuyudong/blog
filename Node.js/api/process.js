@@ -10,3 +10,14 @@ process.argv.forEach(function(val, index) {
   3: two=three
   4: four
 */
+/**
+ * 32位系统约0.7G
+ * 64位系统约1.4G
+ */
+process.memoryUsage();
+/**
+ * { rss: 22163456,
+  heapTotal: 7708672, 堆内存总量
+  heapUsed: 5107024, 堆内存使用
+  external: 25730 }
+ */

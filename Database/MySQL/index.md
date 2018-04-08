@@ -16,10 +16,13 @@ yum install mysql-server
 yum install mysql-devl
 # 通过docker安装
 docker search mysql
-docker pull mysql:5.6
-docker run -p 3306:3306 --name jkom-mysql -v /home/jk/mysql/mysql.cnf:/etc/mysql/my.cnf -v /home/jk/mysql/logs:/logs -v /home/jk/mysql/data:/mysql_data -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
-docker exec -it jkom-mysql bash
-mysql -h localhost -u root -p 123456
+docker pull mysql:5.7
+# linux
+docker run -p 3306:3306 --name mysql -v /Users/zhuyudong/Desktop/Service/mysql/mysql.cnf:/etc/mysql/my.cnf -v /Users/zhuyudong/Desktop/Service/mysql/logs:/logs -v /Users/zhuyudong/Desktop/Service/mysql/data:/mysql_data -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
+# mac
+docker run -p -d 127.0.0.1:3306:3306 --name mysql -v /Users/zhuyudong/Desktop/Service/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
+docker exec -it mysql bash
+mysql -h localhost -u root -p
 
 # 启动
 service mysqld start
@@ -35,6 +38,7 @@ systemctl enable mariadb # 设置开机启动
 mysqladmin --version
 ps -ef | grep mysqld
 mysql
+show databases
 # 创建root密码
 mysqladmin -u root password "new_password" 
 mysql -u root -p

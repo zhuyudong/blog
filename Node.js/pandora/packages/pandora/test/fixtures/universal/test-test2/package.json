@@ -1,0 +1,15 @@
+{
+  "name": "test-app",
+  "pandora": {
+    "start": {
+      "env": "a=1",
+      "config": [
+        "pandora-taobao",
+        "pandora-ali"
+      ]
+    },
+    "dev": {
+      "env": "a=1"
+    }
+  }
+}

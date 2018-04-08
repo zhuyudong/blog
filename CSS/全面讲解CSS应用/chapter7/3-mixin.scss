@@ -1,0 +1,30 @@
+
+$fontSize: 12px;
+$bgColor: red;
+
+// 前面要加@mixin 这个是和less的区别
+@mixin block($fontSize){
+    font-size: $fontSize;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+body{
+    padding:0;
+    margin:0;
+}
+
+.wrapper{
+    background:lighten($bgColor, 40%);
+
+    .nav{
+        // 前面要加@include，这是和less的区别
+        @include block($fontSize);
+    }
+    .content{
+        @include block($fontSize + 2px);
+        &:hover{
+            background:red;
+        }
+    }
+}

@@ -3,7 +3,7 @@
 分隔符;可以不带
 选择器：分类、权重、解析方式、性能
 a{}
-伪元素 ::before{} :after{}   真实存在的元素,IE下是单:
+伪元素 ::before{} ::after{}   真实存在的元素,IE下是单:
 .link{}
 #id{}
 [type=radio]{}
@@ -25,7 +25,7 @@ element{} ::before{}   +1
 字体：字体、字重、颜色、大小、行高，字体族：serif scans-serif monospace 等宽字体 cursive 手写体（方正、静蕾） fantasy 花体  ，字体族不需要加引号
     多字体fallback（针对每一个字符）、网络字体、自定义字体、iconfont
     mac上 "PingFang SC" 字体更好看
-行高：line-height 不同但实际高度相同，大的会撑起inlone-box（父整行）的高度，可以做到垂直居中，按基线对齐
+行高：line-height 不同但实际高度相同，大的会撑起inline-box（父整行）的高度，可以做到垂直居中，按基线对齐
 背景：颜色、渐变色背景、多背景叠加、背景图片和属性（雪碧图）、base64和性能优化、多分辨率适配
 边框
 滚动
@@ -185,4 +185,73 @@ apple.com 使用flex布局方式
 21. base64的使用，图片变成文本、减少请求、适用于小图片、base64的体积约为原图的1.3倍
 22. 伪元素和伪类的区别：伪类表示状态、伪元素表示真实的区别，前者使用双冒号、后者使用单冒号
 23. 美化checkbox：使用label和for属性、id，隐藏原生input  :checked + label
+
+[12个HTML和CSS必须知道的重点难点问题](https://juejin.im/post/5a954add6fb9a06348538c0d)
 ### BFC
+哪些元素会生成BFC：根元素、float不为none、position为absoluted或fixed、display为inline-block|table-cell|table-caption|flex|inline-flex，overflow不为hidden
+BFC的垂直方向margin会发生重叠，取最大值
+BFC的区域不会与浮动盒子重叠
+计算BFC的高度时，浮动元素也参与计算
+
+盒模型
+标准包括content，IE包括border和padding
+body {
+  box-sizing: content-box(默认)|padding-box|border-box
+}
+
+position: static|relative|absolute|fixed
+static 会始终处于页面流给予的位置
+relative 相对于原来位置的偏移，原来的位置依然被占用
+absolute 相对于最近上层relative或absolute的偏移（直至body），原来的位置不被占用
+fixed 相对于浏览器窗口的指定位置
+
+http://luopq.com/2015/11/08/CSS-float/
+浮动元素影响自己及其周围元素环绕，不管是行内元素还是块级元素，浮动会生成一个块级框，可以设置width和height,
+浮动元素的浮动位置不会超过包含块的padding，如果想超出需要设置margin
+如果有多个浮动元素，后面的不会超过前面的margin
+一个左浮动，一个右浮动，左浮动的marginRight不会和右浮动的marginLeft相邻，包含块的宽度小于于两个浮动元素的宽度总和情况下，会发生上下错开
+浮动元素会尽可能向顶端、左、右对齐
+
+px相对于显示器屏幕分辨率而言
+em相对于对象内文本的字体尺寸，向上追溯到浏览器的默认字体尺寸，会继承父级元素的字体大小
+rem相对HTML根元素
+
+css link和@import的区别
+link是XHTML标签，除加载css外，还可以定义RSS等事物，页面加载时同时载入，没有兼容问题，支持js控制DOM改变样式
+@import属于CSS，只能加载css，需要网页完全载入后再加载，css2.1以后提出，不兼容低版本浏览器，不支持js控制DOM改变样式
+
+流式布局就是使用百分比布局
+响应式开发是利用媒体查询 Media Query 768--992-1200-1200
+
+渐进增强与优雅降级
+优雅降级是开始构建完整功能，再对低版本浏览器兼容
+渐进增强反之
+
+隐藏元素
+display: none 不占空间，不触发事件，会导致repaint和reflow
+visibility: hidden 保留空间，只会导致repaint不会导致reflow，无法触发事件
+opacity: 0 保留空间，可以触发事件
+设置width height padding border margin 为0，并且设置 overflow: hidden 来隐藏子元素
+设置元素的position与left、top、bottom、right等，将元素挤到屏幕外面去
+设置position与z-index，将z-index设为最小负数
+
+href和src的区别
+href是指向链接，src会把指向资源嵌入到当前位置，如script img frame
+
+http://www.alloyteam.com/2016/03/mobile-web-adaptation-tool-rem/
+sass 中计算 rem
+@function px@rem($px) {
+  $rem: 37.5px; 
+  @return ($px/$rem) + rem;
+}
+动态设置html的font-size
+@media (min-deveice-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio : 2) {
+  html(font-size: 37.5px;)
+}
+利用JS来设置rem
+document.addEventListener('DOMContentLoaded', function(e) {
+  document.getElementByTagName('html')[0].style.fontSize = window.innerWidth / 10 + 'px'
+}, false);
+devicePixelRatio获取设备像素比dpr，iphone4/5 是2，iphone6plus以上是3
+取消浏览器自动缩放，可以除以75，否则移动端1px会显示0.5px，好处是解决了图片高清的问题，解决了border 1px问题
+meta.setAttribute('content', 'initial-scale=' + 1/dpr + ', maximum-scale=' + 1/dpr + ', minimum-scale=' + 1/dpr + ', user-scalable=no');

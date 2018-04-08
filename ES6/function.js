@@ -154,3 +154,58 @@ function testArguments() {
 testArguments();
 
 // 尾递归优化的实现
+function sum1(x, y) {
+  if (y > 0) {
+    return sum1(x + 1, y - 1);
+  } else {
+    return x;
+  }
+}
+// sum(1, 10000); // RangeError: Maximum call stack size exceeded
+// 蹦床函数
+function tramoline(f) {
+  while (f && f instanceof Function) {
+    // 返回并执行函数
+    f = f();
+  }
+  return f;
+}
+function sum2(x, y) {
+  if (y > 0) {
+    // 返回自身的新函数
+    return sum2.bind(null, x + 1, y - 1);
+  }
+  return x;
+}
+console.log(tramoline(sum2(1, 10000))); // 10001
+// 真正的尾递归优化
+function tco(f) {
+  var value;
+  var active = false;
+  var accmulated = [];
+  // console.log('tco init: ', value); // undfined 只执行一次
+  return function accmulator() {
+    // console.log('tco return: ', arguments); // 1 10000 循环 y 次
+    accmulated.push(arguments);
+    // console.log('this: ', this); // 指向 global
+    if (!active) {
+      active = true;
+      while (accmulated.length) {
+        const args = accmulated.shift();
+        // console.log('args: ', args);
+        value = f.apply(this, args);
+        // console.log('value: ', value); // undefined 避免了递归执行
+      }
+      active = false;
+      return value;
+    }
+  }
+}
+var sum3 = tco(function(x, y) {
+  if (y > 0) {
+    return sum3(x + 1, y - 1);
+  } else {
+    return x;
+  }
+});
+console.log(sum3(1, 10000));
