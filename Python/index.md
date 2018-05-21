@@ -3,6 +3,17 @@
 [Anaconda](https://www.anaconda.com/download/#macos)
 [download](https://pan.baidu.com/s/1kU5OCOB#list/path=%2Fpub%2Fpython)
 
+下载安装
+https://www.python.org/downloads/release/python-365/
+通过homebrew安装
+brew search python
+brew install python3
+安装在 /usr/local/Cellar/python3/3.6.0
+```bash
+python -V # Python 2.7.10
+python3 -V # Python 3.6.5
+```
+
 ```bash
 python3
 print('hello, world');

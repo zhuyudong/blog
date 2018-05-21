@@ -19,3 +19,36 @@ sudo rm /usr/local/bin/node
 #删除全局 node 模块注册的软链
 cd  /usr/local/bin && ls -l | grep "../lib/node_modules/" | awk '{print $9}'| xargs rm 
 ```
+
+# 安装全局包
+```bash
+npm i cnpm -g
+npm i npm-check -g
+npm i pm2 -g
+npm i dva-cli -g
+npm i eslint -g
+npm i roadhog-api-doc -g
+npm i boat-cli -g
+npm i bit-bin -g
+npm i rax-cli -g
+npm i http-server -g
+npm i browser-sync -g
+npm i create-react-app -g
+npm i egg-init -g
+npm i dawn -g
+npm i ghost-cli -g
+npm i yo -g
+npm i generator-keystone -g
+npm i express-generator -g
+npm i commitizen -g
+npm i loadtest -g # 压力测试
+npm i ant-design-pro-cli -g #
+```
+
+### npm常用命令
+```bash
+npm list -g --depth 1 # 查看已全局安装的包
+npm config list -l # 查看配置
+npm config set registry https://registry.npm.taobao.org --global
+npm config set disturl https://npm.taobao.org/dist --global
+```

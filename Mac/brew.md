@@ -48,3 +48,11 @@ git remote set-url origin https://github.com/Homebrew/brew.git
 cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
 git remote set-url origin https://github.com/Homebrew/homebrew-core.git
 ```
+
+## 常用软件安装
+```bash
+brew install tree
+brew install git-flow
+```
+
+##不要使用`brew install nvm`安装node
