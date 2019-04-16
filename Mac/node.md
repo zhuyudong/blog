@@ -43,6 +43,8 @@ npm i express-generator -g
 npm i commitizen -g
 npm i loadtest -g # 压力测试
 npm i ant-design-pro-cli -g #
+npm i yapi-cli -g
+nvm use --delete-prefix v8.11.1 --silent
 ```
 
 ### npm常用命令

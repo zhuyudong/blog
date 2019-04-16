@@ -112,6 +112,7 @@ git branch -m [old] [new]
 git branch -d [branch] 
 git branch -D [branch]
 git branch --set-upsteam [dev] [origin/dev]
+git branch --set-upstream-to=origin/master master # 追踪远程分支
 
 # git tag #
 git tag
@@ -126,4 +127,8 @@ git push origin :refs/tags/v.01 # 删除远程标签
 # checkout #
 git checkout [branch]
 git checkout -b [branch1] [branch]
-```
+```    
+
+https://docs.gitlab.com/runner/
+https://blog.csdn.net/lusyoe/article/details/52714121
+

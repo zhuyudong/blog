@@ -5,3 +5,6 @@ unset ALL_PROXY # 清除环境变量设置
 set # 查看所有本地环境变量
 env # 列出所有环境变量
 ```
+
+ssh-keygen
+cat id_rsa.pub >> authorized_keys # 安装公钥

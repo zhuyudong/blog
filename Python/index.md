@@ -9,9 +9,16 @@ https://www.python.org/downloads/release/python-365/
 brew search python
 brew install python3
 安装在 /usr/local/Cellar/python3/3.6.0
+
+
+通过 [pyenv](https://github.com/pyenv/pyenv) 管理python版本
 ```bash
 python -V # Python 2.7.10
 python3 -V # Python 3.6.5
+
+# 退出repl
+exit()
+ctrl + z
 ```
 
 ```bash
