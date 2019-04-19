@@ -1,3 +1,29 @@
+babel-node --presets @babel/preset-env -- file.js
+
+[rxjs](https://rxjs.dev/api)
+[RxJS](https://rxjs-dev.firebaseapp.com/)
+[学习RxJS操作符](https://rxjs-cn.github.io/learn-rxjs-operators/about/)
+[Launchpad](https://reactive.how/rxjs/mapping)
+[RxJS Marbles](https://rxmarbles.com/#from)
+[rxdb](https://github.com/pubkey/rxdb)
+[MarbleDiagram](https://github.com/LeeCampbell/MarbleDiagram/blob/master/LinqPad/ReadMe.md)
+
+从物理世界来抽象河流：
+  三江源（create）
+  自来水厂（subscribe）
+  合流（concat、zip）
+  大坝（backpressure、debounce、throttle）
+  捕捞（filter）
+  工厂（map、pluck）
+哪些操作符在 `rxjs` 下直接导出，哪些在 `rxjs/operators` 下
+所有操作符都返回 `Observable` 类型吗
+哪些是静态方法，哪些是实例方法，哪些两者都有
+rxjs-compat
+概念：Observable、Observabled
+不执行subscribe()是否就不生成数据
+哪些是异步的
+pipe()一定要返回observable对象
+
 ## 宝石图
 ![](http://p9.pstatp.com/large/pgc-image/d6fb80ae3e90491d99721e5f6c81e91a)
 

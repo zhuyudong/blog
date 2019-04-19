@@ -1,7 +1,14 @@
 ## 使用 coding 源
 ```bash
-cd "$(brew --repo)" && git remote set-url origin https://git.coding.net/homebrew/homebrew.git
-cd $home && brew update
+cd "$(brew --repo)" 
+# 或
+cd `brew --repo`
+git remote set-url origin https://git.coding.net/homebrew/homebrew.git
+brew update
+
+# 其它源
+https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git 清华
+https://mirrors.ustc.edu.cn/brew.git 中科大
 ```
 
 ## 设置全局代理
