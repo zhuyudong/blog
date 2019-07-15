@@ -67,7 +67,7 @@ body {
     transform: translate3d(0,0,0);
 }
 
-/* 改变placeholder的字体颜色大小 */
+/* 改变 placeholder 的字体颜色大小 */
 input::-webkit-input-placeholder {
   font-size: 14px;
   color: #333;

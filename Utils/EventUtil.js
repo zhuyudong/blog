@@ -19,7 +19,7 @@ var EventUtil = {
       return wrapper;
     }
   },
-  off: function(elem, type. handler) {
+  off: function(elem, type, handler) {
     if (elem.removeEventListener) {
       elem.removeEventListener(type, handler, false);
     } else (elem.detachEvent) {
