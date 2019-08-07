@@ -1,3 +1,4 @@
+import { stringify } from 'querystring'
 import axios from 'axios'
 import { CHANGE_LIST } from './constants'
 
@@ -6,7 +7,7 @@ const changeList = list => ({
   list
 })
 
-export const getHomeList = server => {
+export const getHomeList = (payload) => {
   /* equal-1 promise
   return dispatch => {
     return axios.get('url').then(res => {
@@ -14,20 +15,27 @@ export const getHomeList = server => {
       dispatch(changeList(list))
     })
   }
-  //*/
-  ///* equal-2 async/await
+  // */
+
+  /// * equal-2 async/await
+  // 入参默认有 dispatch、getState 两个参数，通过在 createStore 中 applyMiddleware(thunk.withExtraArgument(serverAxios) 注入 axiosInstance
   return async (dispatch, getState, axiosInstance) => {
-    /*
-    const res = await axiosInstance.get('url')
-    const list = res.data.data
-    */
-    // 模拟返回
+    /// * mock
     const list = await new Promise(resolve => {
+      const { limit } = payload
+      const list = [...Array(limit)].map((i, ix) => ({id: ix.toString(), title: `title${ix}`}))
       setTimeout(() => {
-        resolve([{ name: '小新', age: 20 }, { name: '小兰', age: 22 }])
-      }, 18)
+        resolve(list)
+      }, 0)
     })
+    //* /
+
+    /* request
+    // http://nodejs.cn/api/querystring.html#querystring_querystring_stringify_obj_sep_eq_options
+    const res = await axiosInstance.get(`/api/list?${stringify(payload)}`)
+    const list = res && res.data && res.data.data || []
+    // */
     dispatch(changeList(list))
   }
-  //*/
+  //* /
 }

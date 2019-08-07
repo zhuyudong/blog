@@ -6,7 +6,7 @@
 6. 目录治理、公共抽象
 7. 样式处理
 8. stream
-9. 测试、部署、监控
+9. 单测、压测、部署、监控
 
 
 不要使用 `babel-register`，用 `@babel/register`，当 `@babel/preset-env` 的 `{"useBuiltIns" "usage"}` 时需要引入 `core-js@3`

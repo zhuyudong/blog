@@ -1,17 +1,12 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import { reducer as homeReducer } from '../containers/Home/store'
+import reducer from '../reducer'
 
-// 聚合各页面的 reducer
-const reducer = combineReducers({
-  home: homeReducer
-})
-
-///* evolution-1
+/* evolution-1
 const store = createStore(reducer, applyMiddleware(thunk))
 
 export default store
-//*/
+// */
 
 /* evolution-2
 export const createStore () => {
@@ -20,21 +15,25 @@ export const createStore () => {
 }
 
 export const getClientStore = () => {
-  const defaultState = window.context ? window.context.state : {}
+  const defaultState = window.__INITIAL_STATE__ ? window.__INITIAL_STATE__.state : {}
   return createStore(reducer, defaultState, applyMiddleware(thunk))
 }
-//*/
+// */
 
-/* evolution-3
+/// * evolution-3
 import clientAxios from '../client/request'
 import serverAxios from '../server/request'
 
-export const createStore () => {
+// 数据注水
+export const getServerStore = () => {
+  // return createStore(reducer, applyMiddleware(thunk))
   return createStore(reducer, applyMiddleware(thunk.withExtraArgument(serverAxios)))
 }
 
+// 数据脱水
 export const getClientStore = () => {
-  const defaultState = window.context ? window.context.state : {}
-  return createStore(reducer, defaultState, applyMiddleware(thunk))
+  const defaultState = window.__INITIAL_STATE__ ? window.__INITIAL_STATE__.state : {}
+  // return createStore(reducer, defaultState, applyMiddleware(thunk))
+  return createStore(reducer, defaultState, applyMiddleware(thunk.withExtraArgument(clientAxios)))
 }
-//*/
+//* /

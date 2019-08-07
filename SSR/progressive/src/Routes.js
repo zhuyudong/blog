@@ -1,11 +1,10 @@
-import React from 'react'
-import { Route } from 'react-router-dom'
 import Home from './containers/Home'
 import Login from './containers/Login'
 import NotFound from './containers/NotFound'
-import App from './App'
 
-///* evolution-1 组件式写法
+/* evolution-1 组件式写法
+import React from "react"
+import { Route } from "react-router-dom"
 export default (
   <div>
     <Route path="/" exact component={Home} />
@@ -13,29 +12,33 @@ export default (
     <Route path="*" exact component={NotFound} />
   </div>
 )
-//*/
+// */
 
-/* evolution-2 配置式写法
+/// * evolution-2 配置式写法
+import App from './App'
 export default [
   {
     component: App,
     routes: [
       {
+        key: 'home',
         path: '/',
-        component: Home,
         exact: true,
-        loadData: Home.getInitalProps
+        component: Home,
+        getInitialProps: Home.getInitialProps
       },
       {
+        key: 'login',
         path: '/login',
-        component: Login,
-        exact: true
+        exact: true,
+        component: Login
       },
       {
+        key: '404',
         path: '*',
         component: NotFound
       }
     ]
   }
 ]
-//*/
+//* /

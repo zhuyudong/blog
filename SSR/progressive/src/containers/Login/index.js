@@ -1,5 +1,7 @@
 import React from 'react'
 import Header from '../../components/Header'
+import withStyle from "../../withStyle"
+import styles from './style.css'
 
 const Login = () => {
   return (
@@ -10,4 +12,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default withStyle(Login, styles)
