@@ -10,7 +10,7 @@ function myAsyncFunction(url) {
   });
 }
 
-?let myFirstPromise = new Promise((resolve, reject) => {
+let myFirstPromise = new Promise((resolve, reject) => {
   setTimeout(function() {
     resolve('success');
   }, 250);

@@ -1,4 +1,12 @@
-[深入理解TypeScript](https://jkchao.github.io/typescript-book-chinese/#why)
+直接运行 typescript
+
+```bash
+npm i -g typescript
+npm i -g ts-node
+ts-node xxx.ts
+```
+
+[深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/#why)
 
 控制反转 IoC（Inversion of Control）
 依赖注入 DI （Dependency Injection）
