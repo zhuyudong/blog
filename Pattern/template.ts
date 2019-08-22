@@ -1,7 +1,8 @@
 /**
  * 模板方法
  */
-class Component {
+/*
+ class Component {
   private doRender() {}
   setup() {
     this.componentWillMount()
@@ -27,6 +28,7 @@ class ComB extends Component {
     console.log("component B did mount")
   }
 }
+*/
 // function templateMethod() {
 //   const comA = new ComA()
 //   comA.setup()
