@@ -1,31 +1,28 @@
-const path = require('path');
-const webpack = require('webpack');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require("path")
+const webpack = require("webpack")
+const CopyWebpackPlugin = require("copy-webpack-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
+const CleanWebpackPlugin = require("clean-webpack-plugin")
 
 module.exports = {
-  // content: '',
-  entry: './src/index.js', // 默认输出 main.js
+  entry: "./src/index.js", // 默认输出 main.js
   output: {
-    path: path.join(__dirname + '/dist'),
-    filename: 'js/' + '[id].[name].[hash:8].js' // hash根据文件内容变化，名为20位长度
+    path: path.join(__dirname + "/dist"),
+    filename: "js/" + "[id].[name].[hash:8].js" // hash根据文件内容变化，名为20位长度
   },
-  // resolve: { 
-  //   // https://webpack.js.org/configuration/resolve/
-  // },
   externals: {
-    'react': 'React',
-    'react-dom': 'ReactDom'
+    react: "React",
+    "react-dom": "ReactDom"
   },
   module: {
-    rules: [{
-      test: /\.jsx?$/,
-      use: 'babel-loader',
-      // include: './src',
-      // exclude: /node_modules/,
-    }]
+    rules: [
+      {
+        test: /\.jsx?$/,
+        use: "babel-loader"
+        // include: './src',
+        // exclude: /node_modules/,
+      }
+    ]
   },
   plugins: [
     // new webpack.optimize.UglifyJsPlugin({
@@ -51,18 +48,14 @@ module.exports = {
     //   filename: 'index.html',
     //   inject: 'body'
     // }),
-    new CleanWebpackPlugin(['js'], {
-      root: path.join(__dirname + '/dist'),
-      verbose: true,
-      dry: false
-    }),
+    new CleanWebpackPlugin()
     // new CopyWebpackPlugin([
     //   {
-    //     from: 'node_modules/react/umd/react.production.min.js', 
+    //     from: 'node_modules/react/umd/react.production.min.js',
     //     to: 'js/react.min.js'
     //   },
     //   {
-    //     from: 'node_modules/react-dom/umd/react-dom.production.min.js', 
+    //     from: 'node_modules/react-dom/umd/react-dom.production.min.js',
     //     to: 'js/react-dom.min.js'
     //   },
     //   // {from: 'public/favicon.ico', to: 'favicon.ico'}

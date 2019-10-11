@@ -1,5 +1,6 @@
-const loaderUtils = require('loader-utils');
+const loaderUtils = require("loader-utils")
 
 module.exports = function(source) {
-	return source.replace('lee', 'world');
+  console.log("replace-loader")
+  return source.replace("lee", "world")
 }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <style>
+    html,body {
+      margin: 0;
+      width: 100%;
+    }
+    /* 水平垂直居中 */
+    .center {
+      width: 200px;
+      height: 200px;
+      background: red;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -100px;
+    }
+    .center1 {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+
+    #left,#right {
+      width: 200px;
+      height: 100px;
+      position: absolute;
+      background: red;
+    }
+    #left {
+      left: 0;
+    }
+    #right {
+      right: 0;
+    }
+    #center {
+      height: 100px;
+      background: green;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <!-- 水平垂直居中 -->
+  <!-- <div class="center"></div> -->
+  <!-- 左右固定，中间自适应三栏布局 -->
+  <div id="left">left</div>
+  <div id="right">right</div>
+  <div id="center">center</div>
+</body>
+</html>

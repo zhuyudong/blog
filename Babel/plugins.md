@@ -129,10 +129,6 @@ plugin 如何解析 javascript
 - `@babel/template`
 - `@babel/traverse`
 - `@babel/types`
-- ``
-- ``
-- ``
 
-```
 
-```
+[@babel/preset-env 包含的插件列表](https://github.com/babel/babel-preset-env/blob/master/data/plugin-features.js)

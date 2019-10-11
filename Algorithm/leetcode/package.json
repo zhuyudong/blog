@@ -1,0 +1,39 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "leetcode",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest ./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.imooc.com/coding-315/leetcode.git"
+  },
+  "keywords": [
+    "leetcode"
+  ],
+  "author": "cuc_ygh@163.com",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@babel/core": "7.6.2",
+    "@babel/preset-env": "7.6.2",
+    "babel-core": "6.26.3",
+    "babel-jest": "24.9.0",
+    "babel-preset-env": "1.7.0",
+    "eslint-plugin-jest": "22.17.0",
+    "jest": "24.9.0",
+    "regenerator-runtime": "0.13.3"
+  },
+  "devDependencies": {
+    "eslint": "6.4.0",
+    "eslint-config-standard": "14.1.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-node": "10.0.0",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.1"
+  },
+  "directories": {
+    "test": "test"
+  }
+}
